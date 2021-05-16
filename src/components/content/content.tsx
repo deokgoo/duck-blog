@@ -27,10 +27,15 @@ const Content = ({location}) => {
   const data = useStaticQuery(postListQuery);
   const { allMarkdownRemark } = data;
   const { edges } = allMarkdownRemark;
-  
+
+  const pageMove = (slug) => {
+    const { BLOG_URL } = process.env;
+    window.location.href=`${BLOG_URL}${slug}`;
+  }
+
   const createBox = ({date, title, slug, description, hash}) => {
     return (
-      <div className="content__box box" key={title} onClick={_ => window.location.href=slug}>
+      <div className="content__box box" key={title} onClick={() => pageMove(slug)}>
         <div className="content__box-date">{date}</div>
         <div className="content__box-title">{title}</div>
         <div className="content__box-desc">
@@ -69,7 +74,7 @@ const Content = ({location}) => {
     <div className="content">
       <div className="content__menu">
         <div className="content__menu__hash">
-          
+
         </div>
         <div className="content__menu__dark-mode">
           <DarkModeToggler/>
