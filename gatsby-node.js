@@ -1,9 +1,3 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
-console.log(`Using environment config: '${activeEnv}'`)
-require("dotenv").config({
-  path: `.env.${activeEnv}`,
-});
-
 exports.createPages = async function ({ actions, graphql, reporter }) {
   const blogPostTemplate1 = require.resolve(`./src/templates/blogTemplate1.js`);
   const blogPostTemplate2 = require.resolve(`./src/templates/blogTemplate2.js`);
