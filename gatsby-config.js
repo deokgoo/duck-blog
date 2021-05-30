@@ -1,50 +1,44 @@
-const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || 'development';
-console.log(`Using environment config: '${activeEnv}'`);
-require("dotenv").config({
-  path: `.env.${activeEnv}`,
-});
-
 module.exports = {
-  pathPrefix: process.env.BLOG_ROOT,
   siteMetadata: {
-    title: `duck blog`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `deok9`,
+    title: "duck blog",
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
+    "gatsby-plugin-netlify-cms",
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-image",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-google-analytics",
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        trackingId: "",
       },
     },
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: "gatsby-plugin-manifest",
       options: {
-        name: `markdown-pages`,
-        path: `${__dirname}/src/posts`,
+        icon: "src/images/icon.png",
       },
     },
-    `gatsby-transformer-remark`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
+    "gatsby-transformer-remark",
+    "gatsby-plugin-mdx",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: "images",
+        path: "./src/images/",
       },
+      __key: "images",
     },
-    `gatsby-plugin-dark-mode`,
-    `gatsby-plugin-sass`,
-    `gatsby-plugin-gatsby-cloud`,
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "pages",
+        path: "./src/pages/",
+      },
+      __key: "pages",
+    },
   ],
-}
+};

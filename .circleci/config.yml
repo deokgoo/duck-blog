@@ -30,42 +30,22 @@ jobs:
 
       - store_artifacts:
           path: test-reports
-  build_and_push:
+  deploy:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - cache-{{ .Branch }}-{{ checksum "package.json" }}
-            # fallback to using the latest cache if no exact match is found
-            - cache-
-      - run: yarn
-      - save_cache:
-          key: cache-{{ .Branch }}-{{ checksum "package.json" }}
-          paths:
-            - node_modules
-            - ~/.npm
-            - ~/.cache
       - run:
-          command: yarn build
-      - run:
-          name: Install and configure dependencies
-          command: |
-            yarn global add gh-pages@2.0.1
-            git config user.email $GIT_EMAIL
-            git config user.name $GIT_NAME
-            yarn gh-pages
+          name: deploy-site
+          command: curl -X POST -d $DEPLOY_SITE
 
 workflows:
   version: 2
   ut_and_build:
     jobs:
       - unit_tests
-      - build_and_push:
+      - deploy:
           requires:
             - unit_tests
           filters:
             branches:
               only: main
-              ignore:
-                - gh-pages
