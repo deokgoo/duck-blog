@@ -8,15 +8,18 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "duck-blog/node_modules/.bin/gatsby develop",
-    "start": "duck-blog/node_modules/.bin/gatsby develop",
-    "build": "duck-blog/node_modules/.bin/gatsby build",
-    "serve": "duck-blog/node_modules/.bin/gatsby serve",
-    "clean": "duck-blog/node_modules/.bin/gatsby clean"
+    "develop": "node_modules/.bin/gatsby develop",
+    "start": "node_modules/.bin/gatsby develop",
+    "build": "node_modules/.bin/gatsby build",
+    "test": "jest",
+    "serve": "node_modules/.bin/gatsby serve",
+    "clean": "node_modules/.bin/gatsby clean"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "babel-jest": "^27.0.2",
+    "babel-preset-gatsby": "^1.6.0",
     "gatsby": "^3.4.1",
     "gatsby-plugin-google-analytics": "^3.6.0",
     "gatsby-plugin-image": "^1.6.0",
@@ -30,10 +33,13 @@
     "gatsby-source-filesystem": "^3.6.0",
     "gatsby-transformer-remark": "^4.3.0",
     "gatsby-transformer-sharp": "^3.6.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.0.3",
     "netlify-cms-app": "^2.15.11",
     "postcss": "^8.2.6",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0"
+    "react-helmet": "^6.1.0",
+    "react-test-renderer": "^17.0.2"
   }
 }
