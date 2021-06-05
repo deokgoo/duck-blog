@@ -1,44 +1,92 @@
+const siteUrl = process.env.URL || `https://www.example.com`
+
 module.exports = {
   siteMetadata: {
-    title: "duck blog",
+    siteUrl,
+    author: 'deokgoo',
+    title: 'duck blog',
+    description: 'tech blog',
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-postcss",
-    "gatsby-plugin-image",
+    'gatsby-plugin-netlify-cms',
+    'gatsby-plugin-postcss',
+    'gatsby-plugin-image',
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        trackingId: "269335182",
+        trackingId: '269335182',
       },
     },
-    "gatsby-plugin-react-helmet",
-    "gatsby-plugin-sitemap",
+    'gatsby-plugin-react-helmet',
     {
-      resolve: "gatsby-plugin-manifest",
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        icon: "src/images/icon.png",
+        query: `
+        {
+          allSitePage {
+            nodes {
+              path
+            }
+          }
+        }
+      `,
+        resolveSiteUrl: () => siteUrl,
+        resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
+        serialize: ({ path }) => {
+          return {
+            url: path,
+          }
+        },
       },
     },
-    "gatsby-transformer-remark",
-    "gatsby-plugin-mdx",
-    "gatsby-plugin-sharp",
-    "gatsby-transformer-sharp",
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        name: "images",
-        path: "./src/images/",
+        icon: 'src/images/icon.png',
       },
-      __key: "images",
+    },
+    'gatsby-transformer-remark',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'images',
+        path: './src/images/',
+      },
+      __key: 'images',
     },
     {
-      resolve: "gatsby-source-filesystem",
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: "pages",
-        path: "./src/pages/",
+        name: 'pages',
+        path: `${__dirname}/src/pages/`,
       },
-      __key: "pages",
+      __key: 'pages',
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'posts',
+        path: `${__dirname}/src/posts/`,
+      },
+      __key: 'posts',
+    },
+    {
+      resolve: "gatsby-plugin-page-creator",
+      options: {
+        path: `${__dirname}/src/posts`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          posts: require.resolve("./src/templates/blogTemplate.js"),
+          default: require.resolve("./src/templates/blogTemplate.js"),
+        },
+      },
     },
   ],
 };
