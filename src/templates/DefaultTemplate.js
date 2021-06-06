@@ -2,16 +2,16 @@ import React from 'react';
 import Seo from '../components/Seo';
 import './blogTemplate.scss';
 
-export default function Template({children, pageContext}) {
+export default function BlogTemplate({children, pageContext}) {
   const {
-    title, 
-    description, 
-    date 
+    title,
+    description,
+    date
   } = pageContext.frontmatter;
 
   return (
     <div className="blog-post-container">
-      <Seo title={title} description={description} lang="ko"/>
+      <Seo title={title} description={description} />
       <div className="blog-post-articles" role="link" tabIndex={0} onClick={_ => window.location.href='/'} onKeyPress={_ => window.location.href='/'}>
         <span>
           All Articles

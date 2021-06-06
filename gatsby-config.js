@@ -10,6 +10,17 @@ module.exports = {
   plugins: [
     'gatsby-plugin-netlify-cms',
     'gatsby-plugin-postcss',
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [
+          require('postcss-import'),
+          require('postcss-preset-env')({
+            stage: 0
+          })
+        ]
+      }
+    },
     'gatsby-plugin-image',
     {
       resolve: 'gatsby-plugin-google-analytics',
@@ -83,8 +94,8 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          posts: require.resolve("./src/templates/blogTemplate.js"),
-          default: require.resolve("./src/templates/blogTemplate.js"),
+          posts: require.resolve("./src/templates/DefaultTemplate.js"),
+          default: require.resolve("./src/templates/DefaultTemplate.js"),
         },
       },
     },
