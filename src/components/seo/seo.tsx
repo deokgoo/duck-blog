@@ -1,15 +1,21 @@
 import * as React from 'react';
-import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
+import { SeoProps } from './type';
 
-const Seo = ({ description, lang, meta, title, author }) => {
+const defaultMeta = [];
+const blogTitle = 'duck blog';
+
+const Seo = ({
+  lang = 'kr',
+  meta = [],
+  author = 'deokgoo',
+  title,
+  description }: SeoProps) => {
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={{ lang }}
       title={title}
-      titleTemplate={title ? `%s | ${title}` : null}
+      titleTemplate={title ? `%s | ${blogTitle}` : blogTitle}
       meta={[
         {
           name: `description`,
@@ -46,20 +52,6 @@ const Seo = ({ description, lang, meta, title, author }) => {
       ].concat(meta)}
     />
   )
-}
-
-Seo.defaultProps = {
-  lang: `kr`,
-  meta: [],
-  description: ``,
-}
-
-Seo.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
-  author: PropTypes.string,
 }
 
 export default Seo
