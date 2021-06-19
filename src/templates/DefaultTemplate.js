@@ -1,5 +1,5 @@
 import React from 'react';
-import Seo from '../components/Seo';
+import Seo from '../components/seo';
 import './blogTemplate.scss';
 
 export default function BlogTemplate({children, pageContext}) {
@@ -22,8 +22,8 @@ export default function BlogTemplate({children, pageContext}) {
         <small className="blog-post__date">({date})</small>
         {children}
         <div className="blog-post-footer">
-        <hr/>
-      </div>
+          <hr/>
+        </div>
       </div>
     </div>
   );
