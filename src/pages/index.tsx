@@ -7,11 +7,15 @@ import './style.scss';
 const description = '발전을 기록하는 프로그래머의 블로그';
 
 const LandingPage = ({location}) => (
-  <div className='landing-page'>
+  <div className="landing-page">
     <Seo description={description} />
-    <div className="index">
-      <SideBar/>
-      <Content location={location} />
+    <div className="page-container">
+      <div className="sidebar-wrapper">
+        <SideBar/>
+      </div>
+      <div className="content-wrapper">
+        <Content location={location} />
+      </div>
     </div>
   </div>
 )

@@ -10,9 +10,11 @@ const postListQuery = graphql`
           id
           frontmatter {
             title
+            category
             slug
             date
             thumbnail
+            description
             hash
           }
         }
@@ -29,10 +31,13 @@ const Content = ({location}) => {
     window.location.href=`${slug}`;
   }
 
-  const createBox = ({date, title, slug, description, hash}) => {
+  const createBox = ({date, category, title, slug, description, hash}) => {
     return (
-      <div className="content__box box" key={title} onClick={() => pageMove(slug)}>
-        <div className="content__box-date">{date}</div>
+      <div className="content__box" key={title} onClick={() => pageMove(slug)}>
+        <div className="content__box-date_category">
+          <span className="content__box-date">{date}</span>
+          <span className="content__box-category">{category}</span>
+        </div>
         <div className="content__box-title">{title}</div>
         <div className="content__box-desc">
           {description}
@@ -69,11 +74,6 @@ const Content = ({location}) => {
   return (
     <div className="content">
       <div className="content__menu">
-        <div className="content__menu__hash">
-
-        </div>
-        <div className="content__menu__dark-mode">
-        </div>
       </div>
       <div className="content__post-list">
         {filtertedContent()}

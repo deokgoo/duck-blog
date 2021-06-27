@@ -1,14 +1,17 @@
+@import '../../common/style/color.scss';
+
 .side-bar {
-  flex: 1 1 30%;
-  border-right: 1px solid;
   padding: 1rem 2rem;
   display: flex;
   justify-content: flex-start;
+  text-align: center;
   .container {
     width: 100%;
     height: 100%;
     .avatar-wrapper {
       width: 100%;
+      display: flex;
+      justify-content: center;
       .avatar {
         width: 80px;
         height: 80px;
@@ -18,34 +21,44 @@
     }
     .author {
       width: 100%;
-      padding-left: 8px;
-      font-size: 0.8rem;
+      margin-top: 0.4rem;
+      font-size: 1.5rem;
+      color: #FFAA00;
     }
     .description {
       width: 100%;
-      color: gray;
-      padding-left: 8px;
+      margin-top: 0.4rem;
+      font-weight: bold;
       font-size: 0.8rem;
     }
     .menu {
       width: 100%;
       margin-top: 0.6rem;
-      padding-left: 8px;
       ul {
         margin: 0;
+        padding: 0;
         list-style-type: none;
         li {margin:0;}
       }
       .item {
-        font-size: 0.8rem;
+        font-size: 1rem;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        a:hover {
+          color: gray;
+        }
       }
     }
     .contact {
       width: 100%;
-      margin-top: 1rem;
+      margin-top: 0.6rem;
       .contact__list {
         margin: 0;
+        padding: 0;
         display: flex;
+        justify-content: center;
         .contact__item {
           width: 2rem;
           display: flex;
@@ -70,6 +83,7 @@
     }
     .reserved {
       width: 100%;
+      margin-top: 0.6rem;
       color: gray;
       font-size: 0.8rem;
     }

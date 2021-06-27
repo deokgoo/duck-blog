@@ -13,10 +13,10 @@ const SideBar = () => {
           </a>
         </li>
         <li className="item">
-          <a href="#">About me</a>
+          <a href="#">About</a>
         </li>
         <li className="item">
-          <a href="#">Contact me</a>
+          <a href="#">Contact</a>
         </li>
       </ul>
     );
@@ -32,21 +32,16 @@ const SideBar = () => {
       'telegram',
     ]
     return iconKeys.map(x => (
-      <li className="contact__item" key={x}>
-        {
-          config.link[x]?
-            (<a
-              className="contact__item__link"
-              href={x==='mail'?`mailto:${config.link[x]}`:config.link[x]}
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              {icons.contact[x]}
-            </a>) :
-            ''
-        }
-
-      </li>
+      config.link[x] ?
+        (<li className="contact__item" key={x}>
+          <a
+            className="contact__item__link"
+            href={x==='mail'?`mailto:${config.link[x]}`:config.link[x]}
+            rel="noopener noreferrer"
+            target="_blank">
+            {icons.contact[x]}
+          </a>
+        </li>) : ''
     ))
 
   }
@@ -54,7 +49,7 @@ const SideBar = () => {
     <div className="side-bar">
       <div className="container">
         <div className="avatar-wrapper">
-          <img className="avatar" src={config.avatarImg} />
+          <img className="avatar" src={config.avatarImg} alt="deok avatar"/>
         </div>
         <div className="author">{config.author}</div>
         <div className="description">{config.description}</div>
