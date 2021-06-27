@@ -94,8 +94,8 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          posts: require.resolve("./src/templates/defaultTemplate.js"),
-          default: require.resolve("./src/templates/defaultTemplate.js"),
+          posts: require.resolve('./src/templates/defaultTemplate.js'),
+          default: require.resolve('./src/templates/defaultTemplate.js'),
         },
       },
     },
