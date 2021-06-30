@@ -14,7 +14,7 @@ const Seo = ({
   return (
     <Helmet
       htmlAttributes={{ lang }}
-      title={title}
+      title={title??blogTitle}
       titleTemplate={title ? `%s | ${blogTitle}` : blogTitle}
       meta={[
         {
