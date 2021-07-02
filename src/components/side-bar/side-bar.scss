@@ -1,13 +1,12 @@
 @import '../../common/style/color.scss';
 
 .side-bar {
-  padding: 1rem 2rem;
+  padding: 1rem;
   display: flex;
   justify-content: flex-start;
   text-align: center;
   .container {
     width: 100%;
-    height: 100%;
     .avatar-wrapper {
       width: 100%;
       display: flex;

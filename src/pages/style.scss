@@ -6,20 +6,35 @@ body {
 }
 .landing-page {
   display: flex;
-  min-height: 100vh;
-  padding: 2rem;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 4rem 0;
   box-sizing: border-box;
   .page-container {
     display: flex;
     width: 100%;
-    height: 100%;
     .sidebar-wrapper {
       flex: 30% 1 1;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     .content-wrapper {
+      padding: 1rem;
       flex: 70% 1 1;
+      border-left: 1px solid rgb(204, 204, 204);
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .landing-page {padding:2rem;}
+  .landing-page {
+    .page-container {
+      flex-direction: column;
+      .content-wrapper {
+        border-left: none;
+      }
     }
   }
 }
