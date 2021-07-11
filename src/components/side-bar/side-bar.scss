@@ -17,6 +17,9 @@
         margin: 0;
         border-radius: 50%;
       }
+      .avatar:hover {
+        animation: 1s linear 1s infinite alternate tickAnimation;
+      }
     }
     .author {
       width: 100%;
@@ -86,5 +89,15 @@
       color: gray;
       font-size: 0.8rem;
     }
+  }
+}
+
+@keyframes tickAnimation {
+  from {
+    transform: rotate(-15deg);
+  }
+
+  to {
+    transform: rotate(15deg);
   }
 }
