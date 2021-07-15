@@ -50,8 +50,7 @@
   font-size: 1.2rem;
   line-height: 1.8rem;
   blockquote {
-    margin-left: 1.2rem;
-    margin-right: 1.2rem;
+    margin: 0 1.2rem;
   }
   p {
     margin: 6px 0;
@@ -61,6 +60,10 @@
   ul,
   ol {
     padding-left: 18px;
+  }
+  h1,
+  h2 {
+    margin-bottom: 0.5rem;
   }
 }
 
