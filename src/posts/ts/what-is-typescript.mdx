@@ -1,36 +1,52 @@
 ---
 slug: "/ts/what-is-typescript"
 date: "2019-05-04"
-title: "[WIP] typescript 란?"
+title: "typescript 란?"
 thumbnail: ""
 description: "타입스크립트에 대해서"
 category: 'typescript'
 hash: ['typescript', 'language']
 ---
-## <div style="color: #FE8B44">Typescript 역사</div>
+## <div style="color: #FE8B44;margin-bottom:12px;">TypeScript 란</div>
+Typescript는 2012년 10월에 Microsoft에서 public 되었습니다. <br/>
+또한 아래의 3가지를 중심으로 디자인되었습니다.
 
+1. strongly typed
+2. object oriented
+3. compiled language
 
-## <div style="color: #FE8B44">객체지향</div>
-superset of javascript
-dynamically typed => statically typed
-js는 dynamically typed이기 때문에 컴파일시에 에러를 잡지를 못하게 되어
-런타임에서 발견하게되어 불편을 겪는 경우가 발생한다. 허나 ts를 사용하게 되면
-statically typed이기때문에 컴파일 단계에서 타입 에러를 발견 할 수 있다.
+## <div style="color: #FE8B44;">TypeScript의 특징</div>
+<div style="color: #FE8B44;margin-bottom:12px;">TypeScript is JavaScript for application-scale development</div>
+JavaScript의 장점과 추가적인 기능을가지고 있습니다.
 
-또한 객체지향 프로그래밍을 구현하려고 하면 기존 js는 prototype과 constructor
-functions로 객체 지향을 구현할 수 있지만 아무래도 불편한 부분이 있다.
-(ES6넘어오면서 class를 사용 할 수 있으나 결국 prototype베이스 이기때문에 버겁다)
+1. Compilation
+> js는 인터프린터 언어입니다. <br/>
+직접 테스트를 해보지 않으면에러 및 버그를 발견의 어려움을 겪는 경우가 있습니다. <br/>
+TypeScript의 경우에는 코드를 컴파일하는 과정에서 에러를 발견 할 수 있습니다.
+2. Strong Static Typing
+> js는 타입에 있어서 자유롭습니다. <br/>
+> ts는 TLS(TypeScript Language Service)를 통한 <br/>
+> 선택적 정적 입력 및 유형 추론 시스템과 함께 제공됩니다. <br/>
+> (또한 새로운 타입을 정의할 수 있습니다.)
+3. Object Oriented Programming
+> js를 사용하여 OOP 구현하려고 하면 prototype과 constructor
+functions로 구현가능 <span style="color: #FE8B44;font-weight:bold;">BUT</span> 불편 <br/>
+> (ES6넘어오면서 class를 사용 할 수 있으나 결국 prototype베이스) <br/>
+> ts를 사용하게 되면 <span style="color: #FE8B44;font-weight:bold;">class, interface, generics, types</span>
+를 사용하게되어 강력한 OOP를 구현할 수 있습니다.
 
-ts를 사용하게 되면 class, interface, generics, types를 사용하게되어
-강력한 객체지향 프로그래밍을 사용할 수 있게 됩니다.
-
-## <div style="color: #FE8B44">transcompiles</div>
-
-## <div style="color: #FE8B44">공부해야하는 이유</div>
-1. statically typed
-2. readability
-3. OOP
-
-## <div style="color: #FE8B44">번외 접근 계기</div>
-
-## <div style="color: #FE8B44">끝으로</div>
+## <div style="color: #FE8B44;">공부해야하는 이유</div>
+아래의 내용은 주관적인 내용이 포함되어있어 참고해주시기를 바랍니다.
+1. Document
+> js를 사용하는 개발자라고 하면 죄다 ts로된 document를 읽는게 속도가 정말 빠릅니다.
+2. Type Safe
+> js로 UT를 작성하게되면 큰 걱정이없지만 그 만큼 테스트케이스도 늘어납니다. <br/>
+> 타입에대한 error를 테스트를 작성하면... <br/>
+> 컴파일에서 에러 발생하는것을 아주 감사하게 여깁니다 (당해본 자)
+3. accessibility
+> js에대한 이해도가 있다면 습득 속도가 빠르다고 생각됩니다. <br/>
+> TypeScript is JavaScript for application-scale development
+4. class사용이 즐겁다.
+> js class는 private/public 이용도 getter/setter 등이 전부 <br/>
+> 구현을 통하여 극복을 했어야하는데 편합니다 즐겁습니다. <br/><br/>
+> (TODO: js,ts class의 차이점은 다른 포스트에서 깊게 다루어보겠습니다.)
