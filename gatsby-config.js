@@ -98,6 +98,17 @@ module.exports = {
           posts: require.resolve('./src/templates/defaultTemplate.js'),
           default: require.resolve('./src/templates/defaultTemplate.js'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-highlight-code`,
+            options: {
+              terminal: 'carbon',
+              theme: 'vscode',
+              editable: false,
+              lineNumbers: false,
+            }
+          },
+        ],
       },
     },
   ],
