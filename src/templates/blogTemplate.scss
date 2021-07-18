@@ -10,7 +10,8 @@
   box-sizing: border-box;
   font-family: 'Noto Sans KR';
   .blog-post-wrapper {
-    max-width: 945px;
+    width: 80%;
+    max-width: 975px;
     padding: 0 18px;
     display: flex;
     flex-direction: column;
@@ -31,6 +32,7 @@
     }
     .blog-post-content {
       margin-top: 24px;
+      width: 100%;
       .blog-post-content__title {
         margin-bottom: 0;
         text-align: center;
@@ -73,7 +75,7 @@
 @media only screen and (max-width: 768px) {
   .blog-post-container {
     .blog-post-wrapper {
-      max-width: 370px;
+      width: 95%;
       .blog-post-articles {
         position: static;
         margin-top: 12px;
