@@ -1,5 +1,6 @@
 import React from 'react';
 import Seo from '../components/seo';
+import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import './blogTemplate.scss';
 
 export default function BlogTemplate({children, pageContext}) {
@@ -8,6 +9,7 @@ export default function BlogTemplate({children, pageContext}) {
     description,
     date
   } = pageContext.frontmatter;
+  deckDeckGoHighlightElement();
 
   return (
     <div className="blog-post-container">
