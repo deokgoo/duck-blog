@@ -10,6 +10,7 @@ const Seo = ({
   meta = [],
   author = 'deokgoo',
   title,
+  img,
   description }: SeoProps) => {
   return (
     <Helmet
@@ -32,6 +33,10 @@ const Seo = ({
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: img,
         },
         {
           name: `twitter:card`,
