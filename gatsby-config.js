@@ -4,10 +4,11 @@ const {
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
+const siteUrl = NETLIFY_SITE_URL;
 
 module.exports = {
   siteMetadata: {
-    siteUrl: NETLIFY_SITE_URL,
+    siteUrl,
     author: 'deokgoo',
     title: 'duck blog',
     description: 'tech blog',
