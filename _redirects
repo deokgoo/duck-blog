@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://duck-blog.netlify.com/* https://duck-blog.app/:splat 301!
