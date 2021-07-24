@@ -43,27 +43,25 @@ module.exports = {
         query: `
           {
             allSitePage {
-              edges {
-                node {
-                  path
-                  context {
-                    frontmatter {
-                      slug
-                      date
-                      title
-                      thumbnail
-                      description
-                      category
-                    }
+              nodes {
+                context {
+                  frontmatter {
+                    slug
+                    date
+                    title
+                    thumbnail
+                    description
+                    category
                   }
                 }
+                path
               }
             }
           }
         `,
         resolveSiteUrl: () => siteUrl,
-        resolvePages: ({allSitePage}) => allSitePage.edges,
-        serialize: ({ node: {context, path} }) => {
+        resolvePages: ({allSitePage: {nodes: allPages}}) => allPages,
+        serialize: ({path, context}) => {
           if(!context.frontmatter) {
             return {
               url: `${siteUrl}${path}`,
