@@ -39,20 +39,42 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
+        output: `/sitemap.xml`,
         query: `
-        {
-          allSitePage {
-            nodes {
-              path
+          {
+            allSitePage {
+              edges {
+                node {
+                  path
+                  context {
+                    frontmatter {
+                      slug
+                      date
+                      title
+                      thumbnail
+                      description
+                      category
+                    }
+                  }
+                }
+              }
             }
           }
-        }
-      `,
+        `,
         resolveSiteUrl: () => siteUrl,
-        resolvePages: ({ allSitePage: { nodes: allPages } }) => allPages,
-        serialize: ({ path }) => {
+        resolvePages: ({allSitePage}) => allSitePage.edges,
+        serialize: ({ node: {context, path} }) => {
+          if(!context.frontmatter) {
+            return {
+              url: `${siteUrl}${path}`,
+              changefreq: 'monthly',
+              priority: 0.8,
+            }
+          }
           return {
-            url: path,
+            url: `${siteUrl}${path}`,
+            changefreq: 'daily',
+            priority: 0.5,
           }
         },
       },
