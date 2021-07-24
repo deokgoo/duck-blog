@@ -39,7 +39,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: '/',
         query: `
           {
             allSitePage {
@@ -60,20 +59,21 @@ module.exports = {
           }
         `,
         resolveSiteUrl: () => siteUrl,
-        resolvePages: ({allSitePage: {nodes: allPages}}) => allPages,
-        serialize: ({path, context}) => {
-          if(!context.frontmatter) {
+        serialize: ({allSitePage}) => {
+          return allSitePage.nodes.map(({context, path}) => {
+            if(!context.frontmatter) {
+              return {
+                url: `${siteUrl}${path}`,
+                changefreq: 'monthly',
+                priority: 0.8,
+              }
+            }
             return {
               url: `${siteUrl}${path}`,
-              changefreq: 'monthly',
-              priority: 0.8,
+              changefreq: 'daily',
+              priority: 0.5,
             }
-          }
-          return {
-            url: `${siteUrl}${path}`,
-            changefreq: 'daily',
-            priority: 0.5,
-          }
+          })
         },
       },
     },
