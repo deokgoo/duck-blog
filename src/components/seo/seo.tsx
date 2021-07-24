@@ -24,7 +24,7 @@ const Seo = ({
         },
         {
           property: `og:title`,
-          content: title,
+          content: title??blogTitle,
         },
         {
           property: `og:description`,
@@ -48,7 +48,7 @@ const Seo = ({
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: title??blogTitle,
         },
         {
           name: `twitter:description`,
