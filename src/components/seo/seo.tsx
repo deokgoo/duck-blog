@@ -54,6 +54,10 @@ const Seo = ({
           name: `twitter:description`,
           content: description,
         },
+        {
+          name: `naver-site-verification`,
+          content: `da893f74c3322cdabd86b8e116f4d0f88b3c0cbf`
+        }
       ].concat(meta)}
     />
   )
