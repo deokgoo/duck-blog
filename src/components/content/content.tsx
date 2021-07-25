@@ -61,7 +61,14 @@ const Content = ({location}) => {
     return arr.reduce((prev, cur) => prev + `<a href="./?hash_tag=${cur}" style="margin-right: 1rem">#${cur}</a>`, '');
   }
   const filtertedContent = () => {
-    return edges.map(x => createBox(x.node.frontmatter));
+    const filtered = edges.filter(x=> {
+      return !x.node.frontmatter.title.includes('[WIP]');
+    })
+    const sorted = filtered.sort((a,b)=> {
+      if(a.node.frontmatter.date > b.node.frontmatter.date) return -1;
+      else return 1;
+    })
+    return sorted.map(x => createBox(x.node.frontmatter));
   }
   useEffect(() => {
     setTimeout(() => {
