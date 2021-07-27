@@ -15,6 +15,8 @@ const Seo = ({
   description }: SeoProps) => {
   return (
     <>
+      {JSON.stringify(process.env)}
+      {process.env.NETLIFY_SITE_URL}
       {process.env.NETLIFY_SITE_URL !== siteUrl ?
         <Helmet>
           <meta name="robots" content="noindex"></meta>
