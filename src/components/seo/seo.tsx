@@ -15,10 +15,11 @@ const Seo = ({
   description }: SeoProps) => {
   return (
     <>
-    
-      <Helmet>
-        <meta name="robots" content="noindex"></meta>
-      </Helmet>
+      {process.env.NETLIFY_SITE_URL !== siteUrl ?
+        <Helmet>
+          <meta name="robots" content="noindex"></meta>
+        </Helmet>: <></>
+      }
       <Helmet
         htmlAttributes={{ lang }}
         title={title??blogTitle}
