@@ -4,6 +4,7 @@ export type SeoProps = {
   author?: string,
   title?: string,
   img?: string,
+  path: string,
   description?: string,
 }
 

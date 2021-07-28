@@ -8,7 +8,8 @@ export default function BlogTemplate({children, pageContext}) {
   const {
     title,
     description,
-    date
+    date,
+    slug,
   } = pageContext.frontmatter;
   deckDeckGoHighlightElement();
 
@@ -20,7 +21,7 @@ export default function BlogTemplate({children, pageContext}) {
           <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2038243209448310"
       crossorigin="anonymous"></script>
         </Helmet>
-        <Seo title={title} description={description} />
+        <Seo title={title} description={description} path={slug}/>
         <div className="blog-post-articles" role="link" tabIndex={0} onClick={_ => window.location.href='/'} onKeyPress={_ => window.location.href='/'}>
           <div className="blog-post-articles__btn">
             All Articles

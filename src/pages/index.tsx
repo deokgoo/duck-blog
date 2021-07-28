@@ -9,7 +9,7 @@ const description = '발전을 기록하는 프로그래머의 블로그';
 
 const LandingPage = ({location}) => (
   <div className="landing-page">
-    <Seo description={description} img={mainLogo}/>
+    <Seo description={description} img={mainLogo} path="/"/>
     <div className="page-container">
       <div className="sidebar-wrapper">
         <SideBar/>

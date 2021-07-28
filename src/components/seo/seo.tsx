@@ -12,9 +12,13 @@ const Seo = ({
   author = 'deokgoo',
   title,
   img,
+  path,
   description }: SeoProps) => {
   return (
     <>
+      <Helmet>
+        <link rel="canonical" href={`${siteUrl}${path}`} />
+      </Helmet>
       <Helmet
         htmlAttributes={{ lang }}
         title={title??blogTitle}
