@@ -14,8 +14,9 @@
 - GA, CircleCI, Netlify
 
 # Screenshot
-<img src="https://github.com/deokgoo/duck-blog/blob/main/screenshot/screenshot3.png?raw=true" width="200px" height=""></img>
-<img src="https://github.com/deokgoo/duck-blog/blob/main/screenshot/screenshot4.png?raw=true" width="200px" height=""></img>
+<img src="https://github.com/deokgoo/duck-blog/blob/main/screenshot/screenshot3.png?raw=true" width="400px" height=""></img>
+<br/><br/>
+<img src="https://github.com/deokgoo/duck-blog/blob/main/screenshot/screenshot4.png?raw=true" width="400px" height=""></img>
 
 # SEO 관련
 <img src="https://github.com/deokgoo/duck-blog/blob/main/screenshot/screenshot1.png?raw=true" width="200px" height=""></img>
