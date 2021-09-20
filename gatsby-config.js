@@ -41,8 +41,11 @@ module.exports = {
       options: {
         query: `
           {
-            allSitePage {
+            allSitePage(
+              filter: {path: {regex: "/^(((?!blog)(?!category)).)*$/"}, context: {frontmatter: {title: {regex: "/^((?!WIP).)*$/"}}}}
+            ) {
               nodes {
+                path
                 context {
                   frontmatter {
                     slug
@@ -53,13 +56,13 @@ module.exports = {
                     category
                   }
                 }
-                path
               }
             }
           }
         `,
         resolveSiteUrl: () => siteUrl,
         serialize: ({allSitePage}) => {
+          console.log(allSitePage);
           return allSitePage.nodes.map(({context, path}) => {
             if(!context.frontmatter) {
               return {
@@ -116,14 +119,6 @@ module.exports = {
         path: './src/images/',
       },
       __key: 'images',
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'pages',
-        path: `${__dirname}/src/pages/`,
-      },
-      __key: 'pages',
     },
     {
       resolve: 'gatsby-source-filesystem',

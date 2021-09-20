@@ -5,34 +5,31 @@ import { graphql, useStaticQuery } from 'gatsby';
 const postHashQuery = graphql`
   query hashQuery {
     allMdx {
-      nodes {
-        frontmatter {
-          category
-        }
-      }
+      distinct(field: frontmatter___category)
     }
   }
 `;
 
-const HashTagBox = ({location}) => {
+const HashTagBox = ({selected}) => {
   const data = useStaticQuery(postHashQuery);
-  const { nodes } = data.allMdx;
 
   const getHash = (): string[] => {
-    const hashList = new Set<string>();
-    nodes.forEach(x => {
-      hashList.add(x.frontmatter.category);
-    });
+    return data.allMdx.distinct;
+  }
 
-    return Array.from(hashList);
+  const hrefCategory = (category) => {
+    let location = `/category/${category}`;
+    if(category === 'All') {
+      location = `/`;
+    }
+    window.location.href = location;
   }
 
   const renderHash = () => {
     const hashList: string[] = getHash();
-    const category = 'All';
 
     return ['All', ...hashList].map(x =>
-      <li className={`hash-btn ${x==='All'?'active':''}`} role="tab" key={x}>
+      <li className={`hash-btn ${x===selected?'active':''}`} role="tab" key={x} onClick={() => hrefCategory(x)}>
         {x}
       </li>
     );
