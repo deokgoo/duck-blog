@@ -1,42 +1,45 @@
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 html,
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans KR';
+  font-family: 'Noto Sans KR', sans-serif;
 }
 .landing-page {
   display: flex;
   height: 100vh;
   max-height: 100vh;
-  padding: 4rem 0;
+  padding: 0.8rem 0;
   box-sizing: border-box;
+  justify-content: center;
   .page-container {
+    width: 780px;
+    max-width: 100%;
+    margin: 0 2rem;
     display: flex;
-    width: 100%;
-    .sidebar-wrapper {
-      flex: 30% 1 1;
+    flex-direction: column;
+    .title-wrapper {
       display: flex;
       justify-content: center;
-      align-items: center;
+      img {
+        width: 180px;
+        object-fit: fill;
+      }
+      h1 {margin: 0;}
     }
     .content-wrapper {
-      padding: 1rem;
       flex: 70% 1 1;
-      border-left: 1px solid rgb(204, 204, 204);
+      border-left: none;
     }
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .landing-page {padding:2rem;}
+@media only screen and (max-width: 780px) {
   .landing-page {
+    padding: 1rem 0;
     .page-container {
-      flex-direction: column;
-      .content-wrapper {
-        border-left: none;
-      }
+      width: 100%;
     }
   }
 }

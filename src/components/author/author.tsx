@@ -1,9 +1,9 @@
 import * as React from 'react';
 import config, { LinkConfig } from '../../config';
 import icons from '../icons';
-import './side-bar.scss';
+import './author.scss';
 
-const SideBar = () => {
+const Author = () => {
   const menuRender = () => {
     return (
       <ul>
@@ -46,23 +46,23 @@ const SideBar = () => {
 
   }
   return (
-    <div className="side-bar">
+    <div className="author">
       <div className="container">
         <div className="avatar-wrapper">
           <img className="avatar" src={config.avatarImg} alt="deok avatar"/>
         </div>
-        <div className="author">{config.author}</div>
-        <div className="description">{config.description}</div>
-        <div className="menu">{menuRender()}</div>
-        <div className="contact">
-          <ul className="contact__list">
-            {linkIconRender()}
-          </ul>
+        <div className="description">
+          <div className="name">{config.author}</div>
+          <div className="description">{config.description}</div>
+          <div className="contact">
+            <ul className="contact__list">
+              {linkIconRender()}
+            </ul>
+          </div>
         </div>
-        <div className="reserved">© All rights reserved.</div>
       </div>
     </div>
   );
 };
 
-export default SideBar;
+export default Author;

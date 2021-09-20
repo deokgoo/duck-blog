@@ -1,0 +1,104 @@
+@import '../../common/style/color.scss';
+
+.author {
+  .container {
+    width: 100%;
+    display: flex;
+    .avatar-wrapper {
+      min-width: 100px;
+      margin-top: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .avatar {
+        width: 80px;
+        height: 80px;
+        margin: 0;
+        border-radius: 50%;
+      }
+      .avatar:hover {
+        animation: 1s linear 1s infinite alternate tickAnimation;
+      }
+    }
+    .description {
+      width: 100%;
+      margin-top: 0.4rem;
+      font-weight: bold;
+      font-size: 0.8rem;
+      flex: 70% 1 1;
+      display: flex;
+      flex-direction: column;
+      .name {
+        width: 100%;
+        margin-top: 0.4rem;
+        font-size: 1.2rem;
+        color: #FFAA00;
+      }
+    }
+    .menu {
+      width: 100%;
+      margin-top: 0.6rem;
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        li {margin:0;}
+      }
+      .item {
+        font-size: 1rem;
+        a {
+          text-decoration: none;
+          color: black;
+        }
+        a:hover {
+          color: gray;
+        }
+      }
+    }
+    .contact {
+      width: 100%;
+      margin-top: 0.6rem;
+      .contact__list {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        .contact__item {
+          width: 2rem;
+          display: flex;
+          justify-content: center;
+          flex-flow: row wrap;
+          list-style-type: none;
+          .contact__item__link {
+            width: 1.4rem;
+            height: 1.4rem;
+            border: 1px solid rgb(189, 189, 189);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .contact__item__img {
+            width: 0.7rem;
+            height: 0.7rem;
+          }
+        }
+      }
+    }
+    .reserved {
+      width: 100%;
+      margin-top: 0.6rem;
+      color: gray;
+      font-size: 0.8rem;
+    }
+  }
+}
+
+@keyframes tickAnimation {
+  from {
+    transform: rotate(-15deg);
+  }
+
+  to {
+    transform: rotate(15deg);
+  }
+}
