@@ -17,7 +17,7 @@ type Config = {
 const config: Config = {
   avatarImg: 'https://avatars.githubusercontent.com/u/20182365?v=4',
   author: 'deokgoo',
-  description: 'tech blog all web knowledge',
+  description: '근거있는 지식을 기록하는 엔지니어가 목표입니다',
   link: {
     mail: 'kkddgg1001@gmail.com',
     github: 'https://github.com/deokgoo',
