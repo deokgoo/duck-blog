@@ -8,11 +8,19 @@ import HashTagBox from '../../components/hash-tag-box';
 import mainLogo from '../../images/main-logo.png';
 import mainLogoNoBG from '../../images/main-logo-no-bg.png';
 import '../style.scss';
+import PaginationBox from '../../components/pagination-box';
 
 const description = '발전을 기록하는 프로그래머의 블로그';
 
 export default (props) => {
-  console.log(props);
+  const { maxPage, currentPage, category } = props.pageContext;
+  React.useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <div className="landing-page">
       <Seo description={description} img={mainLogo} path="/"/>
@@ -31,6 +39,10 @@ export default (props) => {
         </div>
         <div className="content-wrapper">
           <Content postList={props.data.allMdx.edges}/>
+        </div>
+        <hr className="separator"/>
+        <div className="pagination-wrapper">
+          <PaginationBox maxPage={maxPage} currentPage={currentPage} paginationType={'category'} category={category}/>
         </div>
       </div>
     </div>

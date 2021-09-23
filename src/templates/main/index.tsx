@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Seo from '../../components/seo';
 import DarkModeSwitch from '../../components/dark-mode-switch';
+import PaginationBox from '../../components/pagination-box';
 import Content from '../../components/content';
 import Author from '../../components/author';
 import HashTagBox from '../../components/hash-tag-box';
@@ -12,7 +13,14 @@ import '../style.scss';
 const description = '발전을 기록하는 프로그래머의 블로그';
 
 export default (props) => {
-  console.log(props);
+  const { maxPage, currentPage } = props.pageContext;
+  React.useEffect(() => {
+    window.scroll({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <div className="landing-page">
       <Seo description={description} img={mainLogo} path="/"/>
@@ -31,6 +39,10 @@ export default (props) => {
         </div>
         <div className="content-wrapper">
           <Content postList={props.data.allMdx.edges}/>
+        </div>
+        <hr className="separator"/>
+        <div className="pagination-wrapper">
+          <PaginationBox maxPage={maxPage} currentPage={currentPage} paginationType={'blog'}/>
         </div>
       </div>
     </div>

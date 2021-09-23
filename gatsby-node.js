@@ -57,16 +57,16 @@ exports.createPages = async ({ graphql, actions }) => {
   const postsPerPage = 5;
 
   {
-    const blogNumPages = Math.ceil(categoryAll.length / postsPerPage);
+    const maxPage = Math.ceil(categoryAll.length / postsPerPage);
 
-    Array.from({length: blogNumPages}).forEach((_, i) => {
+    Array.from({length: maxPage}).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/` : `/blog/${i + 1}`,
         component: path.resolve("./src/templates/main/index.tsx"),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
-          blogNumPages,
+          maxPage,
           currentPage: i + 1,
         },
       })
@@ -75,7 +75,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
   for(let i=0;i<categories.length;i++) {
     let categoryLength = (await categoryList(categories[i])).data.allMdx.edges.length;
-    let numPages = Math.ceil(categoryLength / postsPerPage);
+    let maxPage = Math.ceil(categoryLength / postsPerPage);
 
     Array.from({ length: categoryLength }).forEach((_, j) => {
       createPage({
@@ -85,7 +85,7 @@ exports.createPages = async ({ graphql, actions }) => {
           limit: postsPerPage,
           skip: j * postsPerPage,
           category: categories[i],
-          numPages,
+          maxPage,
           currentPage: j + 1,
         },
       });

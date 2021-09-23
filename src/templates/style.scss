@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 html,
 body {
   margin: 0;
@@ -6,38 +7,88 @@ body {
   box-sizing: border-box;
   font-family: 'Noto Sans KR', sans-serif;
 }
+
 .landing-page {
   display: flex;
-  height: 100vh;
-  max-height: 100vh;
   padding: 0.8rem 0;
   box-sizing: border-box;
   justify-content: center;
+
   .page-container {
     width: 780px;
     max-width: 100%;
     margin: 0 2rem;
     display: flex;
     flex-direction: column;
+
     .title-wrapper {
       display: flex;
       justify-content: center;
+
       img {
         width: 180px;
         object-fit: fill;
       }
-      h1 {margin: 0;}
+
+      h1 {
+        margin: 0;
+      }
     }
+
     .content-wrapper {
       flex: 70% 1 1;
       border-left: none;
     }
+
+    .pagination-wrapper {
+      width: 100%;
+      margin-bottom: 2rem;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
+
+.separator {
+  max-width: 120rem;
+  margin: 0.6rem auto;
+  color: #6d6d6d;
+  height: .1rem;
+  background: linear-gradient(270deg,
+          currentColor calc(50% - 16px),
+          transparent calc(50% - 16px),
+          transparent calc(50% + 16px),
+          currentColor calc(50% + 16px));
+  width: calc(100% - 3rem);
+  border: none;
+  overflow: visible;
+  position: relative;
+
+  &:after,
+  &:before {
+    background: currentColor;
+    content: "";
+    display: block;
+    height: 1rem;
+    position: absolute;
+    top: calc(50% - .5rem);
+    transform: rotate(22.5deg);
+    width: .1rem;
+  }
+
+  &:before {
+    left: calc(50% - .5rem);
+  }
+
+  &:after {
+    right: calc(50% - .5rem);
   }
 }
 
 @media only screen and (max-width: 780px) {
   .landing-page {
     padding: 1rem 0;
+
     .page-container {
       width: 100%;
     }
