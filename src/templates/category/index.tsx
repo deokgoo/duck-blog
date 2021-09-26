@@ -29,7 +29,7 @@ export default (props) => {
           <DarkModeSwitch />
         </div>
         <div className="landing-page__title">
-          <img src={mainLogoNoBG} alt="logo"/>
+          <img src={mainLogoNoBG} alt="logo" width="180" height="41.2"/>
         </div>
         <div className="landing-page__author">
           <Author/>
