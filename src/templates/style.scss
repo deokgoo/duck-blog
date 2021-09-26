@@ -14,52 +14,54 @@ body {
   box-sizing: border-box;
   justify-content: center;
 
-  .page-container {
+  .container-box {
     width: 780px;
     max-width: 100%;
-    margin: 0 2rem;
+    margin: 0;
     display: flex;
     flex-direction: column;
+  }
 
-    .title-wrapper {
-      display: flex;
-      justify-content: center;
+  &__author {
+    margin-top: 2rem;
+  }
 
-      img {
-        width: 180px;
-        object-fit: fill;
-      }
+  &__title {
+    display: flex;
+    justify-content: center;
 
-      h1 {
-        margin: 0;
-      }
+    img {
+      object-fit: fill;
     }
 
-    .content-wrapper {
-      flex: 70% 1 1;
-      border-left: none;
-    }
+    h1 {margin: 0;}
+  }
 
-    .pagination-wrapper {
-      width: 100%;
-      margin-bottom: 2rem;
-      display: flex;
-      justify-content: center;
-    }
+  &__content {
+    flex: 70% 1 1;
+    border-left: none;
+  }
+
+  &__pagination {
+    width: 100%;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
   }
 }
 
 .separator {
   max-width: 120rem;
-  margin: 0.6rem auto;
-  color: #6d6d6d;
+  margin-top: 1rem;
+  margin-bottom: 3rem;
+  color: #e3e3e3;
   height: .1rem;
   background: linear-gradient(270deg,
           currentColor calc(50% - 16px),
           transparent calc(50% - 16px),
           transparent calc(50% + 16px),
           currentColor calc(50% + 16px));
-  width: calc(100% - 3rem);
+  width: 100%;
   border: none;
   overflow: visible;
   position: relative;

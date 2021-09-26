@@ -1,34 +1,41 @@
 @import '../../common/style/color.scss';
 
-.content {
+.content-card {
   display: flex;
   flex-direction: column;
-  .content__box {
+  &__box {
     padding: 0.6rem;
     margin-bottom: 1.2rem;
     cursor: pointer;
+
     &:hover {
       background-color: rgb(241, 241, 241);
     }
-    .content__box-date_category {
+
+    .date-and-category {
       font-size: 1rem;
     }
-    .content__box-date {
+
+    &-date {
       color: black;
     }
-    .content__box-category {
+
+    &-category {
       margin-left: 0.6rem;
       color: $main-font-color
     }
-    .content__box-title {
+
+    &-title {
       margin-top: 0.4rem;
       font-size: 1.6rem;
     }
-    .content__box-desc {
+
+    &-desc {
       margin-top: 0.4rem;
       font-size: 1rem;
     }
-    .content__box-hash {
+
+    &-hash {
       margin-top: 0.4rem;
       color: rgb(177, 177, 177);
     }

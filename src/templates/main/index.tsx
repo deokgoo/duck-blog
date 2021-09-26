@@ -24,24 +24,24 @@ export default (props) => {
   return (
     <div className="landing-page">
       <Seo description={description} img={mainLogo} path="/"/>
-      <div className="page-container">
-        <div className="switch-wrapper">
+      <div className="container-box">
+        <div className="landing-page__switch">
           <DarkModeSwitch />
         </div>
-        <div className="title-wrapper">
-          <img src={mainLogoNoBG} alt="logo"/>
+        <div className="landing-page__title">
+          <img src={mainLogoNoBG} alt="logo" width="180" height="41.2"/>
         </div>
-        <div className="author-wrapper">
+        <div className="landing-page__author">
           <Author/>
         </div>
-        <div className="hash-wrapper">
+        <div className="landing-page__hash">
           <HashTagBox selected="All"/>
         </div>
-        <div className="content-wrapper">
+        <div className="landing-page__content">
           <Content postList={props.data.allMdx.edges}/>
         </div>
         <hr className="separator"/>
-        <div className="pagination-wrapper">
+        <div className="landing-page__pagination">
           <PaginationBox maxPage={maxPage} currentPage={currentPage} paginationType={'blog'}/>
         </div>
       </div>
