@@ -8,25 +8,24 @@ const Content = ({postList}) => {
 
   const createBox = ({date, category, title, slug, description, hash}) => {
     return (
-      <div className="content__box" key={title} onClick={() => pageMove(slug)}>
-        <div className="content__box-date_category">
-          <span className="content__box-date">{date}</span>
-          <span className="content__box-category">{category}</span>
+      <div className="content-card__box" key={title} onClick={() => pageMove(slug)}>
+        <div className="date-and-category">
+          <span className="content-card__box-date">{date}</span>
+          <span className="content-card__box-category">{category}</span>
         </div>
-        <div className="content__box-title">{title}</div>
-        <div className="content__box-desc">
+        <div className="content-card__box-title">{title}</div>
+        <div className="content-card__box-desc">
           {description}
         </div>
-        {/* <div className="content__box-hash">{hash.map(x => `#${x} `)}</div> */}
       </div>
     )
   }
 
   return (
-    <div className="content">
-      <div className="content__menu">
+    <div className="content-card">
+      <div className="content-card__menu">
       </div>
-      <div className="content__post-list">
+      <div className="content-card__post-list">
         {postList.map(x => createBox(x.node.frontmatter))}
       </div>
     </div>

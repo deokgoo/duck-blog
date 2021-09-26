@@ -1,6 +1,6 @@
-@import url(https://fonts.googleapis.com/earlyaccess/notosanskr.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-.blog-post-container {
+.blog-post {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -8,8 +8,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Noto Sans KR';
-  .blog-post-wrapper {
+  font-family: 'Noto Sans KR', sans-serif;
+
+  .wrapper {
     width: 80%;
     max-width: 975px;
     padding: 0 18px;
@@ -17,92 +18,121 @@
     flex-direction: column;
     align-items: center;
     box-sizing: border-box;
-    .blog-post-articles {
-      position: fixed;
-      left: 30px;
-      top: 30px;
-      .blog-post-articles__btn {
-        font-size: 18px;
-        padding: 8px 18px;
-        border: 1px solid rgb(255, 228, 197);
-        border-radius: 20px;
-        background-color: rgb(255, 228, 197);
-        cursor: pointer;
-      }
-    }
-    .blog-post-content {
-      margin-top: 24px;
-      width: 100%;
-      .blog-post-content__title {
-        margin-bottom: 0;
-        text-align: center;
-        font-size: 2.5rem;
-      }
-      .blog-post-content__date {
-        margin-top: 0.8rem;
-        text-align: center;
-        font-size: 1.2rem;
-        color: rgb(193, 193, 193);
-      }
-      .blog-post-content__content {
-        margin-top: 3rem;
-      }
+  }
+
+  &__articles {
+    position: fixed;
+    left: 30px;
+    top: 30px;
+
+    .btn {
+      font-size: 18px;
+      padding: 8px 18px;
+      border: 1px solid rgb(255, 228, 197);
+      border-radius: 20px;
+      background-color: rgb(255, 228, 197);
+      cursor: pointer;
     }
   }
-  .blog-post-footer {
+
+  &__footer {
     margin-bottom: 2rem;
   }
 }
 
-.blog-post-content__content {
+.post-content {
+  margin-top: 24px;
+  width: 100%;
+
+  &__title {
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 2.5rem;
+  }
+
+  &__date {
+    margin-top: 0.8rem;
+    text-align: center;
+    font-size: 1.2rem;
+    color: rgb(193, 193, 193);
+  }
+
+  &__box {
+    margin-top: 3rem;
+  }
+}
+
+.mdx-content {
   font-size: 1.2rem;
   line-height: 1.8rem;
-  blockquote {
-    margin: 0 1.2rem;
-  }
+  blockquote {margin: 0 1.2rem;}
+
   p {
     margin: 6px 0;
     font-size: 1.2rem;
     line-height: 1.8rem;
   }
-  ul,
-  ol {
-    padding-left: 18px;
-  }
-  h1,
-  h2 {
-    margin-bottom: 0.5rem;
-  }
-}
 
-@media only screen and (max-width: 768px) {
-  .blog-post-container {
-    .blog-post-wrapper {
-      width: 95%;
-      .blog-post-articles {
-        position: static;
-        margin-top: 12px;
-      }
-      .blog-post-content {
-        margin-top: 0;
-        .blog-post-content__title {
-          margin-top: 12px;
+  ul,
+  ol {padding-left: 18px;}
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    position: relative;
+    margin-bottom: 0.5rem;
+
+    & > a {
+      text-decoration: none;
+      width: 100%;
+
+      :hover {
+        text-decoration: underline;
+
+        & ::before {
+          content: "🔗";
+          transform: translateX(-2rem);
+          position: absolute;
+          font-size: 1.5rem;
+          bottom: 12.5px;
+
+          @media (max-width: 600px) {
+            display: none;
+          }
         }
       }
     }
   }
-  .blog-post-content__content {
-    blockquote {
-      margin-left: 1.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .blog-post {
+    &__wrapper {width: 95%;}
+
+    &__articles {
+      position: static;
+      margin-top: 12px;
     }
+
+    .post-content {
+      margin-top: 0;
+
+      &__title {margin-top: 12px;}
+    }
+  }
+
+  .mdx-content {
+    blockquote {margin-left: 1.2rem;}
     p {
       margin: 2px 0;
       font-size: 1.2rem;
       line-height: 1.8rem;
     }
+
     ul,
-    ol {
-      padding-left: 18px;
-    }
+    ol {padding-left: 18px;}
   }
 }

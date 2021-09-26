@@ -1,14 +1,14 @@
 import * as React from 'react';
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql } from 'gatsby';
 import Seo from '../../components/seo';
 import DarkModeSwitch from '../../components/dark-mode-switch';
 import Content from '../../components/content';
 import Author from '../../components/author';
 import HashTagBox from '../../components/hash-tag-box';
+import PaginationBox from '../../components/pagination-box';
 import mainLogo from '../../images/main-logo.png';
 import mainLogoNoBG from '../../images/main-logo-no-bg.png';
 import '../style.scss';
-import PaginationBox from '../../components/pagination-box';
 
 const description = '발전을 기록하는 프로그래머의 블로그';
 
@@ -24,24 +24,24 @@ export default (props) => {
   return (
     <div className="landing-page">
       <Seo description={description} img={mainLogo} path="/"/>
-      <div className="page-container">
-        <div className="switch-wrapper">
+      <div className="container-box">
+        <div className="landing-page__switch">
           <DarkModeSwitch />
         </div>
-        <div className="title-wrapper">
+        <div className="landing-page__title">
           <img src={mainLogoNoBG} alt="logo"/>
         </div>
-        <div className="author-wrapper">
+        <div className="landing-page__author">
           <Author/>
         </div>
-        <div className="hash-wrapper">
+        <div className="landing-page__hash">
           <HashTagBox selected={props.pageContext.category}/>
         </div>
-        <div className="content-wrapper">
+        <div className="landing-page__content">
           <Content postList={props.data.allMdx.edges}/>
         </div>
         <hr className="separator"/>
-        <div className="pagination-wrapper">
+        <div className="landing-page__pagination">
           <PaginationBox maxPage={maxPage} currentPage={currentPage} paginationType={'category'} category={category}/>
         </div>
       </div>
