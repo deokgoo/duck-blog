@@ -30,9 +30,9 @@ https://search.naver.com/search.naver?query=site%3Ahttps%3A%2F%2Fduck-blog.netli
 
 # TODO
 - [ ] Paging
+- [ ] 메신저 기능
 - [ ] HashTag
 - [ ] 검색기능
-- [ ] 메신저 기능
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
