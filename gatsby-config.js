@@ -42,7 +42,7 @@ module.exports = {
         query: `
           {
             allSitePage(
-              filter: {path: {regex: "/^(((?!blog)(?!category)).)*$/"}, context: {frontmatter: {title: {regex: "/^((?!WIP).)*$/"}}}}
+              filter: {path: {regex: "/^(((?!blog)(?!category)).)*$/"}}
             ) {
               nodes {
                 path
