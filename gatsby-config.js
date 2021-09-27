@@ -156,6 +156,12 @@ module.exports = {
               lineNumbers: false,
             }
           },
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 590,
+            },
+          }
         ],
       },
     },

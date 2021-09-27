@@ -12,7 +12,7 @@ export default function BlogTemplate({children, pageContext}) {
     date,
     slug,
   } = pageContext.frontmatter;
-  deckDeckGoHighlightElement();
+  (() => deckDeckGoHighlightElement())();
 
   const copyToClip = async () => {
     await navigator.clipboard.writeText(window.location);

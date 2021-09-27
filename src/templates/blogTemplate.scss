@@ -11,7 +11,7 @@
   font-family: 'Noto Sans KR', sans-serif;
 
   .wrapper {
-    width: 80%;
+    width: 100%;
     max-width: 975px;
     padding: 0 18px;
     display: flex;
@@ -68,13 +68,28 @@
   blockquote {margin: 0 1.2rem;}
 
   p {
-    margin: 6px 0;
-    font-size: 1.2rem;
-    line-height: 1.8rem;
+    font-size: 1.125rem;
+    line-height: 30px;
+    vertical-align: baseline;
+    letter-spacing: -0.5px;
+    word-spacing: 0;
+    margin: 0 0 1.125rem;
+    padding: 0;
+    font-weight: 400;
+    text-decoration: none;
+    text-align:start;
+    text-indent: 0;
   }
 
   ul,
   ol {padding-left: 18px;}
+
+  span {
+    display: inline-block;
+    width: 2em;
+    user-select: none;
+    opacity: 0.3;
+  }
 
   h1,
   h2,
@@ -126,11 +141,6 @@
 
   .mdx-content {
     blockquote {margin-left: 1.2rem;}
-    p {
-      margin: 2px 0;
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-    }
 
     ul,
     ol {padding-left: 18px;}
