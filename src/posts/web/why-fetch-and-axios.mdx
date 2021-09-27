@@ -8,14 +8,26 @@ category: 'web'
 hash: ['web', 'axios']
 ---
 
-## <div style="color: #FE8B44;margin-bottom:12px;">들어가기전</div>
+<div class="toc-title">Table of Contents</div>
+
+```toc
+# This code block gets replaced with the TOC
+exclude: Table of Contents
+tight: false
+ordered: false
+from-heading: 2
+to-heading: 3
+class-name: "table-of-contents"
+```
+
+## 들어가기전
 
 라이브러리를 사용할 수 없는 환경에서 js를 작성한적이 있었는데
 `XMLHttpRequest`을 사용하여 낡은 코드를 작성한다고 코칭을 받고 충격을 먹어 `Axios, Fetch`에 대해서 공부를 하였습니다. <br/>
 
-## <div style="color: #FE8B44;margin-bottom:12px;">본론</div>
+## 본론
 
-<h3> 1. Fetch </h3>
+### 1. Fetch
 
 XMLHttpRequest API의 대체제로 간단하게 사용하는 것이 가능합니다.<br/>
 
@@ -32,29 +44,27 @@ XMLHttpRequest API의 대체제로 간단하게 사용하는 것이 가능합니
 
 ```javascript
 postData('http://example.com/answer', {answer: 42})
-  .then(data => console.log(JSON.stringify(data))) // JSON-string from `response.json()` call
+  .then(data => console.log(JSON.stringify(data)))
   .catch(error => console.error(error));
 
 function postData(url = '', data = {}) {
-  // Default options are marked with *
     return fetch(url, {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        mode: 'cors', // no-cors, cors, *same-origin
-        cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-        credentials: 'same-origin', // include, *same-origin, omit
+        method: 'POST',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
         headers: {
             'Content-Type': 'application/json',
-            // 'Content-Type': 'application/x-www-form-urlencoded',
         },
-        redirect: 'follow', // manual, *follow, error
-        referrer: 'no-referrer', // no-referrer, *client
-        body: JSON.stringify(data), // body data type must match "Content-Type" header
+        redirect: 'follow',
+        referrer: 'no-referrer',
+        body: JSON.stringify(data),
     })
-    .then(response => response.json()); // parses JSON response into native JavaScript objects
+    .then(response => response.json());
 }
 ```
 
-<h3> 2. Axios </h3>
+### 2. Axios
 Axios는 브라우저를 위한 Promise패턴 기반으로 브라우저와 node에서 동작한다고 한다.
 nodejs에서는 http모듈을 사용하고 브라우저에서는 XMLHttpRequests를 사용한다고 합니다.
 
@@ -83,8 +93,7 @@ axios({
   });
 ```
 
-
-## <div style="color: #FE8B44;margin-bottom:12px;">결론</div>
+## 결론
 
 - 결론은 둘다 XMLHttpRequest의 대체제로 나왔고 Promise패턴을 사용할 수 있는것이 너무 좋습니다.
 - Fetch에 비해 Axios가 좀 더 많은 기능들이 있습니다.

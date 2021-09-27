@@ -1,7 +1,6 @@
 import React from 'react';
 import Seo from '../components/seo';
 import Comment from '../components/comment'
-import { defineCustomElements as deckDeckGoHighlightElement } from '@deckdeckgo/highlight-code/dist/loader';
 import { Helmet } from 'react-helmet';
 import './blogTemplate.scss';
 
@@ -12,7 +11,6 @@ export default function BlogTemplate({children, pageContext}) {
     date,
     slug,
   } = pageContext.frontmatter;
-  (() => deckDeckGoHighlightElement())();
 
   const copyToClip = async () => {
     await navigator.clipboard.writeText(window.location);

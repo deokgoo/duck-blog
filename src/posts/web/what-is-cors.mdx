@@ -1,0 +1,69 @@
+---
+slug: "/web/what-is-cors"
+date: "2021-09-27"
+title: "[WIP] cors 란? (with express)"
+thumbnail: ""
+description: "cors를 정확하게 이해하고 사용하자"
+category: 'web'
+hash: ['web', 'cors', 'express']
+---
+
+```toc
+# This code block gets replaced with the TOC
+exclude: Table of Contents
+tight: false
+ordered: false
+from-heading: 2
+to-heading: 3
+class-name: "table-of-contents"
+```
+
+## 들어가기전
+
+웹에서 API호출을 할 경우 CORS는 마주치기 마련이다. 대략적인 이해만 하고 사용했던 지난날을 반성하며 작성합니다.
+
+## 본론
+### 먼저 SOP(SameOriginPolicy)를 알아야한다.
+
+SOP(SameOriginPolicy)에 의하여 <b>프로토콜, 호스트, 포트</b>
+가 모두가 같아야 리소스 요청이 가능합니다. SOP는 웹브라우저와 API서버의 관계에서 발생하며
+유저의 안전벨트와 같은기능을 하고 있습니다. 브라우저에 따라 옵션을 통하여 SOP를 거부할 수 있습니다. <br/>
+([자세한 내용은 위키](https://en.wikipedia.org/wiki/Same-origin_policy) )
+
+최근 앱들을 보면 아래와 같이 `API레이어`와 `프론트레이어`를 분리하는 케이스가 대부분이다.
+> 1. 웹브라우저 - APIServer
+> 2. 웹브라우저 - WebServer - APIServer
+
+<span style="background-color: #FFE44E; text-align: center; border-radius: 12px;">1번</span>의 경우에는 도메인이 다르면
+당연하게 리소스 요청이 되지않습니다. <span style="background-color: #FFE44E; text-align: center; border-radius: 12px;">2번</span>의 경우에는
+APIServer를 WebServer가 받게된다면 문제 될것 없습니다. &nbsp; APIServer의 리소스를 단순히 WebServer가 전달하는 역할이라면
+&nbsp;<span style="background-color: #FFE44E; text-align: center; border-radius: 12px;">1번</span>의 형태로 요청을 하는게 일반적인 사고일 것입니다.
+<br/><br/>
+
+<h3>SOP(SameOriginPolicy)를 우회하자 JSONP </h3>
+<br/><br/>
+
+<h3>공식 허용 방식 CORS(Cross-origin resource sharing)</h3>
+<br/><br/>
+
+<h3>Front에서 해야할 것</h3>
+<br/><br/>
+
+<h3>Server에서 해야할 것</h3>
+
+```javascript
+let something = 123;
+```
+
+<br/><br/>
+
+## 결론
+
+- 프로토콜, 호스트, 포트가 다르면 SOP에 의해 리소스 요청이 되지않는다.
+- SOP를 브라우저에 따라 무시할 수 있다.
+- SOP는 서버간의 통신은 적용되지 않는다.
+- CORS는 SOP를 허용하기 위하여 사용되어진다.
+- CORS는 사실 서버 요청을 두번 보내게된다.
+
+<br/><br/><br/>
+

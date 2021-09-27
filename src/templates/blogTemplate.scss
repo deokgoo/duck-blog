@@ -65,6 +65,21 @@
 .mdx-content {
   font-size: 1.2rem;
   line-height: 1.8rem;
+  .toc-title {
+    color: gray;
+    margin-bottom: 12px;
+  }
+  .table-of-contents {
+    border-left: 3px solid gray;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding-left: 12px;
+      p {margin: 0}
+      a {color: gray;}
+    }
+  }
+
   blockquote {margin: 0 1.2rem;}
 
   p {
@@ -84,13 +99,7 @@
   ul,
   ol {padding-left: 18px;}
 
-  span {
-    display: inline-block;
-    width: 2em;
-    user-select: none;
-    opacity: 0.3;
-  }
-
+  h1,h2 {color: #FE8B44;}
   h1,
   h2,
   h3,
@@ -120,6 +129,9 @@
         }
       }
     }
+  }
+  .auto-header {
+    margin-left: 8px;
   }
 }
 
