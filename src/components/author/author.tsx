@@ -37,9 +37,10 @@ const Author = () => {
           <StaticImage
             className="avatar"
             src={'../../images/avatar.jpeg'}
-            width={100}
+            width={80}
             quality={95}
             formats={['auto', 'webp', 'avif']}
+            style={{borderRadius: '50%'}}
             alt="github avatar"
           />
         </div>
