@@ -1,26 +1,11 @@
 import * as React from 'react';
+import { StaticImage } from 'gatsby-plugin-image';
 import config, { LinkConfig } from '../../config';
+
 import icons from '../icons';
 import './author.scss';
 
 const Author = () => {
-  const menuRender = () => {
-    return (
-      <ul>
-        <li className="item">
-          <a className="active" href="#">
-            Article
-          </a>
-        </li>
-        <li className="item">
-          <a href="#">About</a>
-        </li>
-        <li className="item">
-          <a href="#">Contact</a>
-        </li>
-      </ul>
-    );
-  };
   const linkIconRender = () => {
     const iconKeys: (keyof LinkConfig)[] = [
       'mail',
@@ -49,7 +34,14 @@ const Author = () => {
     <div className="author">
       <div className="container">
         <div className="avatar-wrapper">
-          <img className="avatar" src={config.avatarImg} alt="deok avatar"/>
+          <StaticImage
+            className="avatar"
+            src={'../../images/avatar.jpeg'}
+            width={100}
+            quality={95}
+            formats={['auto', 'webp', 'avif']}
+            alt="github avatar"
+          />
         </div>
         <div className="description">
           <div className="name">{config.author}</div>

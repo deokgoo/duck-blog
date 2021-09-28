@@ -6,8 +6,8 @@ import PaginationBox from '../../components/pagination-box';
 import Content from '../../components/content';
 import Author from '../../components/author';
 import HashTagBox from '../../components/hash-tag-box';
+import { StaticImage } from 'gatsby-plugin-image';
 import mainLogo from '../../images/main-logo.png';
-import mainLogoNoBG from '../../images/main-logo-no-bg.png';
 import '../style.scss';
 
 const description = '발전을 기록하는 프로그래머의 블로그';
@@ -29,7 +29,13 @@ export default (props) => {
           <DarkModeSwitch />
         </div>
         <div className="landing-page__title">
-          <img src={mainLogoNoBG} alt="logo" width="180" height="41.2"/>
+          <StaticImage
+            src="../../images/main-logo-no-bg.png"
+            width={180}
+            quality={95}
+            formats={['auto', 'webp', 'avif']}
+            alt="blog logo"
+          />
         </div>
         <div className="landing-page__author">
           <Author/>
