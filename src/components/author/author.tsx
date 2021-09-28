@@ -34,15 +34,17 @@ const Author = () => {
     <div className="author">
       <div className="container">
         <div className="avatar-wrapper">
-          <StaticImage
-            className="avatar"
-            src={'../../images/avatar.jpeg'}
-            width={80}
-            quality={95}
-            formats={['auto', 'webp', 'avif']}
-            style={{borderRadius: '50%'}}
-            alt="github avatar"
-          />
+          <div style={{height: '80px', width: '80px', borderRadius: '50%', overflow: 'hidden'}}>
+            <StaticImage
+              className="avatar"
+              src={'../../images/avatar.jpeg'}
+              width={80}
+              quality={95}
+              formats={['auto', 'webp', 'avif']}
+              style={{borderRadius: '50%'}}
+              alt="github avatar"
+            />
+          </div>
         </div>
         <div className="description">
           <div className="name">{config.author}</div>
