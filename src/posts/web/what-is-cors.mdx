@@ -22,7 +22,9 @@ class-name: "table-of-contents"
 
 ## 들어가기전
 
-웹에서 API호출을 할 경우 CORS는 마주치기 마련이다. 대략적인 이해만 하고 사용했던 지난날을 반성하며 작성합니다.
+SameOrigin 정책에 의해 Origin이 같지 않으면 HTTPRequest를 하는 것이 어려웠으며
+이를 우회하기 위해서 나온방법이 JSONP(2005년에 제안 되었다고함) 그 이후 공식적으로 지원하는 것이
+CORS(2014년 1월에는 W3C 권장 사항으로 승인되었습니다.)
 
 ## 본론
 ### 먼저 SOP(SameOriginPolicy)를 알아야한다.
