@@ -110,9 +110,17 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        icon: 'src/images/icon.png',
+        name: `duck blog`,
+        short_name: `dBlog`,
+        start_url: `/`,
+        background_color: `#f7f0eb`,
+        theme_color: `#a2466c`,
+        display: `standalone`,
+        icon: `src/images/icon.png`,
+        cache_busting_mode: `none`, // `query`(default), `name`, or `none`
       },
     },
+    `gatsby-plugin-offline`,
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
     {
