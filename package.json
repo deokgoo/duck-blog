@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "duck blog",
+  "license": "MIT",
   "author": "deokgoo",
   "keywords": [
     "gatsby"
