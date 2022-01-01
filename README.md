@@ -24,9 +24,9 @@
 
 # SiteMap 확인
 ### Google
-https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app
+<a src="https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app" target="_blank">https://www.google.com/search?q=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app</a>
 ### Naver
-https://search.naver.com/search.naver?query=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app
+<a src="https://search.naver.com/search.naver?query=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app" target="_blank">https://search.naver.com/search.naver?query=site%3Ahttps%3A%2F%2Fduck-blog.netlify.app</a>
 
 # TODO
 - [ ] Paging
