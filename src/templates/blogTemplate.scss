@@ -84,7 +84,7 @@
 
   p {
     font-size: 1.125rem;
-    line-height: 30px;
+    line-height: 1.725rem;
     vertical-align: baseline;
     letter-spacing: -0.5px;
     word-spacing: 0;
@@ -94,6 +94,10 @@
     text-decoration: none;
     text-align:start;
     text-indent: 0;
+    margin-bottom: 0;
+  }
+  li {
+    margin-bottom: 8px;
   }
 
   ul,
