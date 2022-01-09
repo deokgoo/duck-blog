@@ -80,14 +80,18 @@
     }
   }
 
+  .language-text {font-weight: bold; padding: 2px 5px;}
+
   blockquote {margin: 0 1.2rem;}
 
+  span,
+  li,
   p {
     font-size: 1.125rem;
-    line-height: 1.725rem;
+    line-height: 2rem;
     vertical-align: baseline;
     letter-spacing: -0.5px;
-    word-spacing: 0;
+    word-spacing: 0.25rem;
     margin: 0 0 1.125rem;
     padding: 0;
     font-weight: 400;
@@ -134,6 +138,7 @@
       }
     }
   }
+  a { text-decoration: none;}
   .auto-header {
     margin-left: 8px;
   }
