@@ -1,10 +1,10 @@
 const {
   NODE_ENV,
-  URL: VERCEL_URL = 'http://localhost:8000',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
+  URL: GATSBY_VERCEL_URL = 'http://localhost:8000',
+  DEPLOY_PRIME_URL: URL,
+  CONTEXT: GATSBY_VERCEL_ENV = NODE_ENV
 } = process.env;
-const siteUrl = NETLIFY_SITE_URL;
+const siteUrl = GATSBY_VERCEL_URL;
 
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
