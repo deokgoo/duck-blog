@@ -18,7 +18,6 @@ module.exports = {
     description: 'tech blog',
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sass',
@@ -87,7 +86,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => GATSBY_VERCEL_ENV,
         env: {
           production: {
             policy: [{ userAgent: '*', allow: '/' }],
