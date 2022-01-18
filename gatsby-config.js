@@ -80,7 +80,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => GATSBY_VERCEL_ENV,
+        resolveEnv: () => process.env.NODE_ENV,
         env: {
           production: {
             policy: [{ userAgent: '*', allow: '/' }],
