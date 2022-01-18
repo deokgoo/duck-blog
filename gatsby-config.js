@@ -1,14 +1,8 @@
-const {
-  NODE_ENV,
-  URL: GATSBY_VERCEL_URL = 'http://localhost:8000',
-  DEPLOY_PRIME_URL: URL,
-  CONTEXT: GATSBY_VERCEL_ENV = NODE_ENV
-} = process.env;
-const siteUrl = GATSBY_VERCEL_URL;
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+const siteUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://duck-blog.vercel.app';
 
 module.exports = {
   siteMetadata: {
