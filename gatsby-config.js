@@ -1,14 +1,8 @@
-const {
-  NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'http://localhost:8000',
-  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
-  CONTEXT: NETLIFY_ENV = NODE_ENV
-} = process.env;
-const siteUrl = NETLIFY_SITE_URL;
-
 require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+const siteUrl = process.env.NODE_ENV === 'development' ? 'http://localhost:8000' : 'https://duck-blog.vercel.app';
 
 module.exports = {
   siteMetadata: {
@@ -18,7 +12,6 @@ module.exports = {
     description: 'tech blog',
   },
   plugins: [
-    'gatsby-plugin-netlify-cms',
     'gatsby-plugin-postcss',
     {
       resolve: 'gatsby-plugin-sass',
@@ -87,7 +80,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        resolveEnv: () => NETLIFY_ENV,
+        resolveEnv: () => process.env.NODE_ENV,
         env: {
           production: {
             policy: [{ userAgent: '*', allow: '/' }],
